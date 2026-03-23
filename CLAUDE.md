@@ -14,7 +14,7 @@ There are no tests, linters, or build tools. All JS is plain ES5-compatible glob
 
 ## Git Workflow
 
-After every meaningful change: commit with a descriptive message and push to GitHub.
+**This is a hard requirement:** after completing any unit of work — a bug fix, a new feature, a balance tweak — commit and push immediately. Never leave work uncommitted. The GitHub remote is the source of truth and the safety net for reverting bad changes.
 
 ```bash
 git add <specific files>
@@ -22,7 +22,10 @@ git commit -m "Short summary of what and why"
 git push
 ```
 
-Never use `git add -A` or `git add .` — stage files explicitly.
+- Stage files explicitly by name — never `git add -A` or `git add .`
+- Commit messages: imperative mood, describe *what changed and why* (e.g. `Fix Input.update() clearing keys before state handlers read them`)
+- One logical change per commit — don't batch unrelated fixes together
+- Always push immediately after committing; a local-only commit is not a saved state
 
 ## Architecture
 
